@@ -1,0 +1,9 @@
+name: Practice
+
+on: workflow_dispatch
+
+jobs: 
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - run: node index.js
