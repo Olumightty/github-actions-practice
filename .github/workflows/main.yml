@@ -20,4 +20,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check the Github Event
-        run: echo ${{ github.event}} | jq
+        run: echo '${{ github.event}}' | jq
+        shell: bash
