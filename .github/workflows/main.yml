@@ -1,6 +1,10 @@
 name: Practice
 
-on: workflow_dispatch
+on: 
+  issues:
+    types: [opened]
+    
+  workflow_dispatch:
 
 jobs: 
   execute:
@@ -12,3 +16,8 @@ jobs:
         with:
           node-version: 22.x
       - run: node index.js
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the Github Event
+        run: echo ${{ github.event}}
