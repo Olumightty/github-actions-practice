@@ -6,6 +6,9 @@ on:
     
   workflow_dispatch:
 
+permissions:
+  issues: write
+  
 jobs: 
   execute:
     runs-on: ubuntu-latest
@@ -30,4 +33,5 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.issue.number }}
-          body: 'Hi'
+          body: |
+            Hello
